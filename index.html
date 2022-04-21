@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title> Maen Khdour 1171944 Server</title>
+    </header>
+    <head> 
+        <link rel="stylesheet" href="./Style.css" />
+        <link rel="img" href="./favicon.ico"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+            <a  href=https://ritaj.birzeit.edu/register/?return_url=%2f">News</a>
+            <a  href="#1">About</a>
+            <a  href="#2">Contact</a>
+            <a  href="https://www.google.com/" >Login</a>
+            <a  href="https://www.google.com/" >Sign up</a>
+            <a  href="fifth_v.html" style="float: right">RES:VILLAGE</a>
+            <a  href="fourth_v.html" style="float: right">Jerusalem</a>
+            <a  href="third_v.html" style="float: right">BTS</a>
+            <a  href="second_v.html" style="float: right;">Vampire Diaries</a>
+            <a  href="first_v.html" style="float: right">Doctor Stranger</a>
+        </div>
+       
+        <div class="morphing">
+            <div class="word">Hi</div>
+            <div class="word">Welcome</div>
+            <div class="word">To</div>
+            <div class="word">Maen Khdour</div>
+            <div class="word">Multimedia </div>
+            <div class="word">Course project </div>
+            <div class="word">Enjoy Watching </div>
+        </div>
+        <br>
+        <section class="glass">
+            <div class="container">
+                <div class="card">
+                    <figure class =card__thumb>
+                        <img src="./Images/Doctor.jpg" alt=" Doctor Stranger" class="card__img">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">Doctor Stranger</h2>
+                            <p class="card__snippet">Doctor Stranger is a Korean Drama 2014, Resolution 1080p-144p, QP=10-50 Segment = 1 sec, duration = 7 min </p>
+                            <a  href="first_v.html" class="click">Watch Video</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            
+                <div class="card">
+                    <figure class =card__thumb>
+                        <img src="./Images/jerusalem.png" alt="Jerusalem Video Takeb by Issam" class="card__img">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">What does Jerusalem mean to you?</h2>
+                            <p class="card__snippet">This Video taken by Issam Al Ashhab,
+                                contain a tour in jerusalem with sound of some his followers that answering the question What does Jerusalem mean to you,
+                                Resolution 1080p-144p, QP=20-40 Segment = 4 sec, duration = 7:18 min
+                            </p>
+                            <a  href="fourth_v.html" class="click">Watch Video</a>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <figure class =card__thumb>
+                        <img src="./Images/re8.jpg" alt="Resident Evil VILLAGE" class="card__img">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">Resident Evil VILLAGE</h2>
+                            <p class="card__snippet">A horror Game released in may 2021 from Capcom, Resolution 1080p-144p, QP=10-50 segment = 5 sec,duration= 14:08 min </p>
+                            <a  href="fifth_v.html" class="click">Watch Video</a>
+                        </figcaption>
+                    </figure> 
+                </div>
+
+                <div class="card">
+                    <figure class =card__thumb>
+                        <img src="./Images/Vampire.jpg" alt=" The Vampire Diaries " class="card__img">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">The Vampire Diaries</h2>
+                            <p class="card__snippet">The Vampire Diaries is an American supernatural teen drama,from 2009 - 2017
+                                Resolution 1080p-144p, QP=10-50 Segment = 2 sec, duration = 4:29 min
+                            </p>
+                            <a  href="second_v.html" class="click">Watch Video</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="card">
+                    <figure class =card__thumb>
+                        <img src="./Images/BTS.jpg" alt=" BTS SONG Black Swan" class="card__img">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">BTS Black Swan</h2>
+                            <p class="card__snippet">A music Video for BTS (Black Swan) 2020, Resolution 480p-144p, QP=10-50 segment = 3 sec, duration = 3:37 min </p>
+                            <a  href="third_v.html" class="click">Watch Video</a>
+                        </figcaption>
+                    </figure> 
+                </div>
+            </div>
+        </section>
+        <div class="About" id="1">
+            <p style="font-size: 50px;">
+                About:
+            </p>
+            <p style="font-size: 20px;" >This Project for ENCS5398, SP.TOP: MULTIMEDIA NETWORKING <br> 
+                
+                This project will stream a stored video using HTTP protocol. To complete the project do the following: <br>
+                &ensp;  1. Download three videos from the internet or use any other sources to get the videos. The videos
+                should be of different resolutions. <br>
+                &ensp; 2. Setup a webserver server on a server using docker containers. You will be given an account on a
+                server dedicated for this project. You should refrain to use it for any other purpose. <br>
+                &ensp; 3. Create a Hello webpage (blank webpage with Hello text) on the server. <br>
+                &ensp; 4. Use port forwarding on the server (docker container) and in the ssh command to test the server
+                and view the Hello webpage locally (at localhost or 127.0.0.1). <br>
+                &ensp; 5. For each video in point 1, follow the guidelines for Smart encoding of uploaded videos for adaptive
+                bitrate streaming of Microsoft: <br> &ensp; &ensp; <a href="https://docs.microsoft.com/en-us/stream/network-overview" style="color:rgb(107, 107, 230)">(https://docs.microsoft.com/en-us/stream/network-overview)
+                </a> to do
+                the following:<br>
+                &ensp;  &emsp;a. Use ffmpeg to process the downloaded video to generate videos with different qualities,<br>
+                &ensp;&emsp; b. Use ffmpeg to process the downloaded video to generate videos with different resolutions,<br>
+                &ensp; 6. Use the MP4Box software tool to produce DASH compatible video stream; manifest (.mpd) and
+                video files (.m4s) and store these files in the root directory of the webserver,<br>
+                &ensp; 7. Create a main webpage that have links for three video stream webpages. In each of the video
+                stream webpages add the JavaScript player as shown in the lecture slides.<br>
+                &ensp; 8. Use any internet browser to view the three webpages locally and play the video.<br>
+                &ensp; 9. To validate how your web pages load and stream video in poor network connections.<br>
+                &ensp; &emsp; a. Perform network throttling in your browser to simulate poor network and view in the
+                    downloaded video chunks.<br>
+                &ensp; &emsp; b. Use any webpage testing platform such as BrowserStak to simulate network conditions on
+                    mobile devices.<br>
+            </p>
+        </div>
+        <div  id ="2"class="About">
+            <p style="font-size: 50px;"> Contact:</p>
+            <br>
+            <div class="social">
+                &ensp;  <a href="https://www.facebook.com/m3n99/" class="fa fa-facebook" style="text-decoration: none;color:rgb(27, 27, 255)"> facebook: Mȃȅň Kĥďøũŕ</a>
+                <br>
+                <br>
+                &ensp;<a href="https://www.instagram.com/m3n.khdour/" class="fa fa-instagram" style="text-decoration: none;color:rgb(255, 0, 119)"> Instagram: m3n.khdour
+                </a>
+                <br>
+                <br>
+                &ensp;<a href=" 1171944@student.birzeit.edu" class="fa fa-google" style="text-decoration: none;color:rgb(255, 255, 255)"> Gmail:  1171944@student.birzeit.edu
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

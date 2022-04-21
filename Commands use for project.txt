@@ -1,0 +1,47 @@
+
+Run Docker :
+command : dokcer run 
+
+
+find docker ID:
+docker ps | grep 1171944
+
+Delete:
+rm -r website 
+docker kill id then docker rm id
+
+create file first:
+mkdir website
+touch index.html
+
+create docker:
+docker run -dit --name encs5398-ns1171944 -p 8037:80 -v /home/ns1171944/website/:/usr/local/apache2/htdocs/ httpd:2.4
+
+
+Qualities & Resolution:
+ffmpeg -i input.mp4 -c:v libx264 -keyint_min X -g X -an -vf scale=1920:1080 -b:v 3000k video_1080.mp4
+X=frames in sec
+
+Sound:
+ffmpeg -i Nobody.mp4 -vn -acodec aac my_audio.m4a
+
+
+Final MP4Box Work:
+
+
+./MP4Box -dash 1000 -frag 1000 -rap -segment-name 'segment_$RepresentationID$_' -fps 29.97 video1_10_144.mp4#video video1_20_144.mp4#video video1_30_144.mp4#video video1_40_144.mp4#video video1_50_144.mp4#video video1_10_240.mp4#video video1_20_240.mp4#video video1_30_240.mp4#video video1_40_240.mp4#video video1_50_240.mp4#video video1_10_360.mp4#video video1_20_360.mp4#video video1_30_360.mp4#video video1_40_360.mp4#video video1_50_360.mp4#video video1_10_480.mp4#video video1_20_480.mp4#video video1_30_480.mp4#video video1_40_480.mp4#video video1_50_480.mp4#video video1_10_720.mp4#video video1_20_720.mp4#video video1_30_720.mp4#video video1_40_720.mp4#video video1_50_720.mp4#video video1_10_1080.mp4#video:role=main video1_20_1080.mp4#video video1_30_1080.mp4#video video1_40_1080.mp4#video video1_50_1080.mp4#video   audio1.m4a#audio:id=Sound:role=main -out Mainfest/video-manifest.mpd
+
+
+upolde in server:
+pscp -P 22 project.zip ns1171944@176.119.254.185:/home/ns1171944/website/
+
+
+
+Simple Test:
+<!DOCTYPE html>
+<html>
+    <bode>
+        <script src="http://cdn.dashjs.org/latest/dash.all.min.js" ></script>
+        <video data-dashjs-player src="test2.mpd" controls></video>
+    </bode>
+</html>

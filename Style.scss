@@ -1,0 +1,318 @@
+
+$speed: 10s;
+$wordCount:7;
+
+
+/* For Nav Bar*/
+/* Add a black background color to the top navigation */
+.topnav {
+	background-color: rgb(0, 0, 0);
+	overflow: hidden;
+	width: 100%; /* Full width */  
+	
+}
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 12px 14px;
+	text-decoration: none;
+	font-size: 24px;
+	display: block;
+}
+  
+  /* Change the color of links on hover */
+.topnav a:hover {
+	background: #ddd;
+	background-color: #ddd;
+	color: black;
+}
+  
+  /* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #b00b69;
+	color: white;
+
+}
+
+
+
+
+/* for annimation*/
+body {
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(0, 0, 0);
+	
+}
+.container{
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	margin: 10px 0 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.word{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: word $speed infinite ease-in-out;
+
+    @for $i from 0 to $wordCount{
+        &:nth-child(#{$i +1}){
+            animation-delay: ($speed /($wordCount +1)*$i) - $speed;
+        }
+    }
+
+    @keyframes word {
+        0%, 5%, 100% {filter: blur(0px); opacity: 1;}
+        20%, 80% {filter: blur(1em); opacity: 0;}
+    }
+}
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing:  border-box;
+}
+
+
+.morphing{
+    position: relative;
+    font-size: 100px;
+    background-color: black;
+    color: blanchedalmond;
+    min-height: 20vh;
+    filter: contrast(25) blur(1px);
+}
+
+/*GLASS STYLE*/
+.glass {
+    background: white;
+    min-height: 60vh;
+    width: 80%;
+    background: linear-gradient(
+      to right bottom,
+	  rgba(173, 221, 0, 0.3),
+      rgba(68, 6, 49, 0.7),
+	  rgba(0, 224, 224, 0.3),
+	  rgba(123, 93, 253, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 3;
+    backdrop-filter: blur(1.5rem);
+    padding: 5px;
+    
+}
+
+$desktop: 1024px;
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: $desktop) {
+      @content;
+		}
+	}
+}
+
+
+/* for Videos card*/
+.card {
+	width: 32%;
+    height: 60%;
+	margin: 7px;
+	background-color: white;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+	
+	&:hover {
+		.card__caption {
+			top: 50%;
+			transform: translateY(-50%);
+			padding: 5px 10px;
+		}
+
+		.card__img {
+			transform: translateY(-10px);
+            justify-content: center;
+           
+		}
+
+		.card__thumb {
+			&::after {
+				top: 0;
+			}
+		}
+
+		.card__snippet {
+			margin: 40px 0;
+		}
+	}
+
+	&__thumb {
+		position: relative;
+		max-height: 400px;
+		overflow: hidden;
+
+		
+		@include breakpoint(desktop) {
+			max-height: 500px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, rgba(0, 0, 0, .5) 40%, rgba(255, 255 ,255 , 0) 100%);
+			transition: .3s;
+			
+			@include breakpoint(desktop) {
+				top: calc(100% - 140px);
+			}
+		}
+	}
+	
+	&__img {
+		transition: .5s ease-in-out;
+        width: 100%;
+        height: 100%;
+	}
+	
+	&__caption {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		padding: 0 20px;
+		color: white;
+		transform: translateY(-50%);
+		text-align: center;
+		transition: .3s;
+
+		@include breakpoint(desktop) {
+			top: calc(100% - 110px);
+			transform: unset;
+		}
+	}
+
+	&__title {
+		display: -webkit-box;
+		max-height: 85px;
+    overflow: hidden;
+		font-family: 'Playfair Display', serif;
+		font-size: 23px;
+		line-height: 28px;
+		text-shadow: 0px 1px 5px black;
+		text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+
+	&__snippet {
+		display: -webkit-box;
+		max-height: 400px;
+		margin: 20px 0;
+		font-family: 'Roboto', sans-serif;
+		font-size: 16px;
+		line-height: 20px;
+		text-overflow: ellipsis;
+		transition: .5s ease-in-out;
+        -webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+		
+		@include breakpoint(desktop) {
+			margin: 60px 0;
+		}
+	}
+
+	&__button {
+		display: inline-block;
+		padding: 10px 20px;
+		color: white;
+		border: 1px solid white;
+		font-family: 'Roboto', sans-serif;
+		font-size: 12px;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: .3s;
+
+		&:hover {
+			color: black;
+			background-color: white;
+		}
+	}
+}
+.click{
+	border: 1px solid;
+	background-color:rgb(54, 54, 54);
+	color: white;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 5px 10px;
+
+}
+
+.disclaimer {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	z-index: 2;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px 10px;
+	background-color: white;
+	transform: translateX(-50%);
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	
+	&__link {
+		color: #755D87;
+		text-decoration: none;
+	}
+}
+
+.card__img{
+	width: 100%;
+	height: max-content;
+}
+
+
+/*First Video*/
+.Video_css{
+	min-height:720px;
+	min-width: 1200px;
+	background-attachment: fixed;
+	background-position:center;
+	background-size: cover;
+	place-items: center;
+	display: grid;
+	
+}
+
+.v1{
+	height: 500px;	
+	z-index:5;
+}
+
+.About{
+	
+	padding: 20px 20px;
+	font-family: 'Times New Roman', Times, serif;
+	color: white;
+	
+}
+
+.social{
+	font-size: 20px;
+	padding: 2px 2px;
+	text-decoration: none;
+	
+}
+
